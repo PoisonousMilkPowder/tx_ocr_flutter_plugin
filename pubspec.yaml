@@ -1,6 +1,6 @@
 name: tx_ocr
 description: 腾讯云ocr插件
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/PoisonousMilkPowder/tx_ocr_flutter_plugin
 
 environment:

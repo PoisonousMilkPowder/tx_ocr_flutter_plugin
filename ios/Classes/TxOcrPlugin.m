@@ -29,7 +29,7 @@
       OcrSDKConfig *ocrSDKConfig = [[OcrSDKConfig alloc] init];
       ocrSDKConfig.ocrModeType = OCR_DETECT_AUTO_MANUAL;
       /// SDKKIt 加载 OCR 配置信息
-      int res = [[OcrSDKKit sharedInstance] loadSDKConfigWithSecretId:call.arguments[@"secretId"] withSecretKey:call.arguments[@"secretKey"] withConfig:ocrSDKConfig];
+      [[OcrSDKKit sharedInstance] loadSDKConfigWithSecretId:call.arguments[@"secretId"] withSecretKey:call.arguments[@"secretKey"] withConfig:ocrSDKConfig];
       initSDK = 1;
       result(@"SDK初始化完成");
   } else if([@"dispose" isEqualToString:call.method]) {
@@ -42,7 +42,6 @@
       if (!initSDK) {
           result([FlutterError errorWithCode:@"1001" message:@"SDK未初始化 " details:nil]);
           return;
-          BankCardOCR
       }
       NSString *ocrType = [NSString stringWithFormat:@"%@",call.arguments[@"ocrType"]];
      /*!
