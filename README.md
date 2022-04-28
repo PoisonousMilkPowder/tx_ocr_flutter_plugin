@@ -19,6 +19,13 @@ implementation(name: 'OcrSDKv1.0.8-release', ext: 'aar')
     <item name="android:windowFullscreen">true</item>
 </style>
 
+混淆配置
+#保留自定义的 OcrSDKKit 类和类成员不被混淆
+-keep class com.tencent.ocr.sdk.** {*;}
+
+#第三方 jar 包不被混淆
+-keep class com.tencent.youtu.** {*;}
+
 ios端要做的事
 Build Phases -> Linked Binary With Libraries 中添加 libc++.tbd
 info添加
